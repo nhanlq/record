@@ -699,10 +699,10 @@
 
 
       // var upload_url = 'https://your-domain.com/files-uploader/';
-      var upload_url = '/record/save.php?uid='+ uid + '&quiz_id='+quiz_id;
+      var upload_url = '/save.php?uid='+ uid + '&quiz_id='+quiz_id;
 
       // var upload_directory = upload_url;
-      var upload_directory = '/record/uploads/';
+      var upload_directory = '/uploads/';
 
       makeXMLHttpRequest(upload_url, formData, function(progress) {
         if (progress !== 'upload-ended') {
