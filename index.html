@@ -707,16 +707,13 @@
       var url_string = window.location.href;
       var url = new URL(url_string);
       var uid = url.searchParams.get("uid");
+      var time = url.searchParams.get("time");
       var quiz_id = url.searchParams.get("quiz_id");
       var blob = recordRTC instanceof Blob ? recordRTC : recordRTC.blob;
       var fileType = blob.type.split('/')[0] || 'audio';
-      var fileName = (Math.random() * 1000).toString().replace('.', '');
+      var fileName = uid+'_'+quiz_id+'_'+time;
 
-      if (fileType === 'audio') {
-        fileName += '.wav';
-      } else {
         fileName += '.webm';
-      }
 
       // create FormData
       var formData = new FormData();
@@ -727,7 +724,7 @@
 
 
       // var upload_url = 'https://your-domain.com/files-uploader/';
-      var upload_url = '/save.php?uid='+ uid + '&quiz_id='+quiz_id;
+      var upload_url = '/save.php?uid='+ uid + '&quiz_id='+quiz_id+'&time='+time;
 
       // var upload_directory = upload_url;
       var upload_directory = '/uploads/';
