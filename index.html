@@ -715,11 +715,11 @@
       var url_string = window.location.href;
       var url = new URL(url_string);
       var uid = url.searchParams.get("uid");
-      var time = url.searchParams.get("time");
+      var stemp = url.searchParams.get("stemp");
       var quiz_id = url.searchParams.get("quiz_id");
       var blob = recordRTC instanceof Blob ? recordRTC : recordRTC.blob;
       var fileType = blob.type.split('/')[0] || 'audio';
-      var fileName = uid+'_'+quiz_id+'_'+time;
+      var fileName = uid+'_'+quiz_id+'_'+stemp;
 
       if (fileType === 'audio') {
         fileName += '.wav';
