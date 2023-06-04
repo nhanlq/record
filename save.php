@@ -45,11 +45,11 @@ function selfInvoker()
 
   if (!empty($_FILES['audio-blob'])) {
     $file_idx = 'audio-blob';
-    $fileName = $_GET['uid'].'_'.$_GET['quiz_id'].'_'.$_GET['stemp'].'.webm';
+    $fileName = $_GET['uid'].'_'.$_GET['quiz_id'].'_'.$_GET['time'].'.webm';
     $tempName = $_FILES[$file_idx]['tmp_name'];
   } else {
     $file_idx = 'video-blob';
-    $fileName = $fileName = $_GET['uid'].'_'.$_GET['quiz_id'].'_'.$_GET['stemp'].'.webm';
+    $fileName = $fileName = $_GET['uid'].'_'.$_GET['quiz_id'].'_'.$_GET['time'].'.webm';
     $tempName = $_FILES[$file_idx]['tmp_name'];
   }
 
