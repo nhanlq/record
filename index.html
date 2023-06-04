@@ -721,6 +721,9 @@
       var fileType = blob.type.split('/')[0] || 'audio';
       var fileName = uid+'_'+quiz_id+'_'+time;
 
+      if (fileType === 'audio') {
+        fileName += '.wav';
+      } else {
         fileName += '.webm';
 
       // create FormData
