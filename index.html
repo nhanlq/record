@@ -114,18 +114,21 @@
 
     <video controls playsinline autoplay muted=false volume=1></video>
   </section>
+  <script type="text/javascript">
+    var timeleft = 60;
+    var downloadTimer = setInterval(function(){
+      if(timeleft <= 0){
+        clearInterval(downloadTimer);
+        document.getElementById("start_voice").show();
+      }
+      document.getElementById("countdown").value = 60 - timeleft;
+      timeleft -= 1;
+    }, 1000);
+  </script>
 
   <script>
     (function() {
-      var timeleft = 60;
-      var downloadTimer = setInterval(function(){
-        if(timeleft <= 0){
-          clearInterval(downloadTimer);
-          document.getElementById("start_voice").show();
-        }
-        document.getElementById("countdown").value = 60 - timeleft;
-        timeleft -= 1;
-      }, 1000);
+
 
       var params = {},
         r = /([^&=]+)=?([^&]*)/g;
